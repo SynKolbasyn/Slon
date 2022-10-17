@@ -6,13 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_latitude_tv"
+        style="@style/MainTextViewStile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/main_longitude_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="latitude" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_longitude_tv"
+        style="@style/MainTextViewStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/main_latitude_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="longitude" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_latitude_val"
+        style="@style/MainTextViewStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/main_latitude_tv"
+        app:layout_constraintStart_toStartOf="@+id/main_latitude_tv"
+        app:layout_constraintTop_toBottomOf="@id/main_latitude_tv"
+        tools:text="100" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_longitude_val"
+        style="@style/MainTextViewStile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/main_longitude_tv"
+        app:layout_constraintStart_toStartOf="@+id/main_longitude_tv"
+        app:layout_constraintTop_toBottomOf="@id/main_longitude_tv"
+        tools:text="100" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
