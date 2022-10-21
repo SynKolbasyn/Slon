@@ -17,6 +17,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 const val GEO_LOCATION_REQUEST_COD_SUCCESS = 1
 const val TAG = "GPS_TEST"
 
+var lat = "0"
+var lon = "0"
+
 class MainActivity : AppCompatActivity() {
 
     // ------------------------- GPS -------------------------
@@ -38,8 +41,8 @@ class MainActivity : AppCompatActivity() {
     private fun initViews(){
         main_latitude_tv.text = "Latitude"
         main_longitude_tv.text = "Longitude"
-        main_latitude_val.text = "0"
-        main_longitude_val.text = "0"
+        main_latitude_val.text = lat
+        main_longitude_val.text = lon
     }
 
     // ------------------------- GPS -------------------------
@@ -58,6 +61,9 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "onLocationResult: ${geo.locations.size}")
             for (location in geo.locations){
                 mLocation = location
+                lat = location.latitude.toString()
+                lon = location.longitude.toString()
+                initViews()
                 Log.d(TAG, "onLocationResult: lat: ${location.latitude} ; lon: ${location.longitude}")
             }
         }
